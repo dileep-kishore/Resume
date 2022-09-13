@@ -1,0 +1,278 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{ amssymb }
+%\newcommand*{\mystrut}{\rule[0.5\baselineskip]{0pt}{0.1\baselineskip}}
+\newcommand*{\mybox}[1]{\framebox{\strut #1}}
+
+\usepackage[url=false,maxbibnames=99]{biblatex}
+\addbibresource{publications.bib}
+
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\boldname{Kishore}{Dileep}{K.}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.550\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	% If your name is very short, use just one of the lines below
+	% If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Dileep}}}}} % First name
+
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Kishore}}}}} % Last name
+
+
+	\vspace{2pt}
+	{\large PhD candidate, Boston University} % Career or current job title
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\medskip
+	\icon{At}{12}{\href{mailto:dkishore@bu.edu}{dkishore@bu.edu}}\\
+%	\vspace{0.1cm}
+    \icon{Github}{12}{\href{https://github.com/dileep-kishore}{dileep-kishore}}\\
+    \medskip
+    \icon{Linkedin}{12}{\href{https://www.linkedin.com/in/dileep-kishore/}{dileep-kishore}}\\
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
+    \vspace{-\baselineskip} % Required for vertically aligning minipages
+    \medskip
+    \icon{Phone}{12}{+1 857 302 8235}\\
+    \icon{Home}{12}{Boston, MA}\\
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\medskip
+
+\end{minipage}
+
+\vspace{-0.8cm}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+%\cvsect{Who Am I?}
+%
+%\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
+%	\vspace{-\baselineskip} % Required for vertically aligning minipages
+%
+%	\lorem \lorem \lorem \lorem \lorem\\ % Dummy text
+%\end{minipage}
+%\hfill % Whitespace between
+%\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
+%	\vspace{-\baselineskip} % Required for vertically aligning minipages
+%	\begin{barchart}{5.5}
+%		\baritem{\textbf{Python}}{60}
+%		\baritem{\textbf{MATLAB}}{100}
+%		\baritem{\textbf{R}}{70}
+%		\baritem{\textbf{\LaTeX}}{70}
+%		\baritem{Git}{40}
+%		\baritem{LaTeX}{60}
+%	\end{barchart}
+%\end{minipage}
+%
+%\begin{center}
+%	\bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}
+%\end{center}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\vspace{12pt}
+\cvsect{Education}
+
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+\textbf{Ph.D. in Bioinformatics:} Boston University, GPA: 4.00/4.00 \hfill 2016 -- Present
+
+\vspace{1mm}
+
+\textbf{B.Tech \& M.Tech in Biotechnology:} Indian Institute of Technology -- Madras, GPA: 9.23/10.00 \hfill 2011 -- 2016
+
+\end{minipage}\\
+
+
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Professional experience}
+
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+    \textbf{Graduate Student Researcher:} Boston University \hfill 2016 -- Present
+    \vspace{-1mm}
+    \begin{itemize}[itemsep=-4pt]
+      \item Created \textit{MiCoNE}, a 16S sequencing data analysis pipeline built using Python, R and nextflow for the inference of co-occurrence networks
+      \item Initiated the analysis of metagenomics data from the gut microbiome of ultra centenarians and its inference into co-occurrence networks
+      \item Advanced the development of \textit{pipeliner}, a nextflow pipeline for the analysis of bulk and single-cell RNA sequencing data
+      \item Assisted in the development of \textit{MIND}, a database and web interface for the visualization and analysis of microbial interaction networks
+      \item Constructed a pipeline to estimate binding affinities of microbial metabolites with the Aryl Hydrocarbon Receptor (AHR) and a mathematical model to study the downstream regulatory pathway
+      % \item Developed \textit{ReLearn}, a reinforcement learning framework for optimal control of microbial communities in bioreactors
+    \end{itemize}
+
+    % TODO: Should I write about software developer experience
+
+    \textbf{Undergraduate Researcher:} Indian Institute of Technology -- Madras \hfill 2015 -- 2016
+    \vspace{-1mm}
+    \begin{itemize}[itemsep=-4pt]
+      \item Developed an algorithm for an unbiased search using GPUs to find network topologies capable of oscillations
+    \end{itemize}
+\end{minipage}
+
+\cvsect{Publications}
+
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip} % Required for
+
+  \nocite{federicoPipelinerNextflowBasedFramework2019,pachecoFAIRRepresentationsMicrobial2022}
+  \nocite{kishoreInferringMicrobialCooccurrence2020,kishoreIntroducingBenchmarkingAccuracy2020,huResourceComparisonIntegration2022}
+  \printbibliography[heading=none]
+
+\end{minipage}
+
+
+\cvsect{Selected posters and talks}
+
+
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip} % Required for
+
+
+    \begin{itemize}[itemsep=-2pt]
+      \item \textbf{Dileep Kishore}, Pankaj Mehta, Daniel Segrè. \emph{Using deep-RL to control bioreactors: The ReLearn framework}. Talk. Kilachand fellowship presentation sponsored by the Multicellular Design Program (May 2022).
+      \item \textbf{Dileep Kishore}, Gabriel Birzu, Zhenjun Hu, Charles DeLisi, Kirill S. Korolev, and Daniel Segrè. \emph{Inferring microbial co-occurrence networks from 16S data: A systematic evaluation}. Talk and poster. Intelligent Systems for Molecular Biology 2019 (ISMB 2019).
+      \item \textbf{Dileep Kishore}, Gabriel Birzu, Zhenjun Hu, Charles DeLisi, Kirill S. Korolev, and Daniel Segrè. \emph{MIND: The Microbial Interaction Network Database}. Talk and poster presentation. International Workshop on Bioinformatics and Systems Biology 2018 (IBSB 2018).
+      \item *Tanya Karagiannis, *Kritika Karri, \textbf{Dileep Kishore}, Joshua D. Campbell, and Stefano Monti. \emph{Pipeliner: A flexible high-throughput sequencing data analysis framework}. Poster presentation. Intelligent Systems for Molecular Biology 2017 (ISMB 2017).
+      % \item \textbf{Dileep Kishore} and Jennifer Reed. \emph{Wild type flux predictions from RB-TnSeq data}. Poster presentation. Student symposium for Khorana, S. N. Bose and Viterbi-India programs 2015.
+    \end{itemize}
+
+\end{minipage}
+
+% \cvsect{Projects}
+%
+% \begin{minipage}[t]{\textwidth}
+% 	\vspace{-\baselineskip} % Required for
+%     \vspace{-1mm}
+%     \begin{itemize}[itemsep=-4pt]
+%     \end{itemize}
+%
+% \end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\cvsect{Skills}
+
+\vspace{-4mm}
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip}
+	\begin{align*}
+    \colorbox{black}{\textcolor{white}{\textbf{Bioinformatics}}} &\quad \text{16S and metagenomics } \blacksquare \text{ bulk and single-cell RNA seq } \blacksquare \text{ nextflow and snakemake } \\
+        \colorbox{black}{\textcolor{white}{\textbf{Machine Learning}}} &\quad \text{supervised } \blacksquare \text{ unsupervised } \blacksquare \text{ ANNs (feedforward, CNN, autoencoders) }  \\
+        \colorbox{black}{\textcolor{white}{\textbf{Reinforcement Learning}}} &\quad \text{off-policy (DQN) } \blacksquare \text{ on-policy (A2C, PPO) } \\
+        \colorbox{black}{\textcolor{white}{\textbf{Statistics}}} &\quad \text{linear/logistic/nonlinear regression } \blacksquare \text{ generalized linear models } \blacksquare \text{ hypothesis testing } \\
+        \colorbox{black}{\textcolor{white}{\textbf{Web, Database \& Cloud}}} &\quad \text{Javascript/Typescript } \blacksquare \text{ Frontend (React) } \blacksquare \text{ Backend (Flask, Express) } \blacksquare \text{ SQL } \blacksquare \text{ Docker } \\
+        \colorbox{black}{\textcolor{white}{\textbf{Languages}}} &\quad \textbf{Python }\text{(pandas, scikit-learn, keras, pytorch) } \blacksquare \textbf{ R }\text{(glm, dplyr, ggplot2, igraph) } \blacksquare \textbf{ MATLAB}\\
+        \colorbox{black}{\textcolor{white}{\textbf{Other}}} &\quad \text{git }
+        \blacksquare \text{ C/C++ }\blacksquare \text{ Unix } \blacksquare \text{ \LaTeX }
+	\end{align*}
+\end{minipage}
+
+
+
+\cvsect{Teaching and leadership experience}
+\vspace{-1mm}
+\begin{minipage}[t]{\textwidth}
+  \textbf{Organizing committee:} BU Bioinformatics Student Organized Symposium \hfill 2019
+  \vspace{-1mm}
+  \begin{itemize}[itemsep=-4pt]
+    \item Contacted leading researchers to coordinate talks at the symposium
+    \item Organized the poster session
+    \item Advertised the event to the broader scientific community in Boston
+  \end{itemize}
+  %\vspace{2mm}
+  \textbf{Instructor/TA:} 1 course + 4 workshops, Boston University \hfill 2018--2022
+  \vspace{-1mm}
+  \begin{itemize}[itemsep=-4pt]
+    \item \textbf{Foundations of Programming, Data Analytics, and Machine Learning in Python:} Assisted in teaching programming and machine learning concepts to graduate students.
+    \item \textbf{Bioinformatics in the Cloud Workshop:} Organized a series of workshops that taught deployment of large data and complex algorithms to the cloud using the Amazon Web Services platform
+    \item \textbf{Bioinformatics Programming Workshops:} Started and set up the framework to organize annual workshops that taught programming, bioinformatics tools and reproducible research
+    \item \textbf{Bioinformatics Research and Interdisciplinary Training Experience:} Organized a series of workshops to introduce basic bioinformatics research to undergraduate researchers and to provide mentorship.
+  \end{itemize}
+\end{minipage}
+
+\cvsect{Awards}
+
+\vspace{-4mm}
+
+\begin{minipage}[t]{\textwidth}
+	\vspace{-3mm}
+	\begin{itemize}[itemsep=-4pt]
+      \item \textbf{Academic Fellowship:} Kilachand fellowship sponsored by the multicellular design program, 2021
+      \item \textbf{Academic best record:} Indian Institute of Technology -- Madras, Biotechnology, 2016
+	\end{itemize}
+\end{minipage}
+
+\end{document}
